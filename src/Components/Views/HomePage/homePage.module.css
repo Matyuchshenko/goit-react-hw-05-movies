@@ -1,0 +1,20 @@
+.title {
+  text-align: center;
+}
+.cardItem {
+  width: 200px;
+}
+.link {
+  text-decoration: none;
+  color: #444;
+}
+.cardList {
+  width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.cardItem {
+  display: block;
+}

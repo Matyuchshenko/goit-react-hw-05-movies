@@ -1,0 +1,23 @@
+.searchForm {
+  display: block;
+  width: 400px;
+  margin: 20px auto;
+}
+.searchFormInput {
+  width: 300px;
+}
+
+.searchFormButton {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.searchFormButtonLabel {
+  font-size: 16px;
+}
+
+.searchFormButtonLabel:hover {
+  color: #2e2eec;
+}

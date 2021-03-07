@@ -1,0 +1,23 @@
+.castList {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.actorCard {
+  margin-right: 10px;
+  width: 200px;
+  height: 400px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.actorName {
+  font-weight: 500;
+}
+
+.character {
+  font-size: 14px;
+}
