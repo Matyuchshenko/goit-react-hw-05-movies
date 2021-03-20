@@ -1,14 +1,21 @@
 import { useState, useEffect, lazy, Suspense, useRef } from 'react';
-import {useParams, NavLink, useRouteMatch, Route, useLocation, useHistory} from 'react-router-dom';
+import {
+  useParams,
+  NavLink,
+  useRouteMatch,
+  Route,
+  useLocation,
+  useHistory,
+} from 'react-router-dom';
 import hitsApi from '../../../Services/hits-api';
 import s from './MovieDetailsPage.module.css';
 
 const Cast = lazy(() =>
-  import('../../Cast/Cast.js' /* webpackChunkName: "Casts"*/),
+  import('../../Cast/Cast' /* webpackChunkName: "Casts"*/),
 );
 
 const Reviews = lazy(() =>
-  import('../../Reviews/reviews.js' /* webpackChunkName: "Reviews"*/),
+  import('../../Reviews/Reviews' /* webpackChunkName: "Reviews"*/),
 );
 
 export default function MovieDetailsPage() {
@@ -18,16 +25,13 @@ export default function MovieDetailsPage() {
   const location = useLocation();
   const history = useHistory();
   const backLocation = useRef(location);
-
   const onGoBack = () => {
     history.push(backLocation?.current?.state?.from ?? '/');
   };
 
   useEffect(() => {
-    hitsApi
-      .getMovieDetails(movieId)
-      .then(data => {
-        setMovie(data);
+    hitsApi.getMovieDetails(movieId).then(data => {
+      setMovie(data);
     });
   }, [movieId]);
 
@@ -35,7 +39,7 @@ export default function MovieDetailsPage() {
     <>
       {movie && (
         <>
-          <button type="button" onClick={onGoBack} className={s.buttonBack}>
+          <button type="button" onClick={onGoBack} className={s.goBackIcon}>
             Go back
           </button>
           <div className={s.filmDetails}>
@@ -82,10 +86,10 @@ export default function MovieDetailsPage() {
           </div>
 
           <Suspense fallback={<h2>Loading...</h2>}>
-            <Route path={`${url}/cast`}>
+            <Route path={`${url}/Cast`}>
               <Cast id={movieId} />
             </Route>
-            <Route path={`${url}/reviews`}>
+            <Route path={`${url}/Reviews`}>
               <Reviews id={movieId} />
             </Route>
           </Suspense>

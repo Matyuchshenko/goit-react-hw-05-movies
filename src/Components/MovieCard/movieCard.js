@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import NoImage from '../images/NoImages.jpg';
+import NoImage from '../images/NoImage.jpg';
 import s from './movieCard.module.css';
 
 export default function MovieCard({ movie }) {
@@ -14,10 +14,10 @@ export default function MovieCard({ movie }) {
         }
         alt={movie.title}
       />
-      <p className="">{movie.title}</p>
+      <p>{movie.title}</p>
     </>
   );
-}
+} 
 
 MovieCard.propTypes = {
   movie: PropTypes.object,

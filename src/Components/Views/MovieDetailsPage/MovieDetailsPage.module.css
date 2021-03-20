@@ -1,4 +1,4 @@
-.buttonBack {
+.goBackIcon {
   margin: 20px;
   background: none;
   border: none;
@@ -8,7 +8,7 @@
 }
 
 .goBackIcon:hover {
-  color: #2e2eec;
+  color: #2196f3;
 }
 
 .filmDetails {
@@ -37,8 +37,12 @@
   text-decoration: none;
   margin-left: 20px;
   margin-bottom: 10px;
+  font-weight: 500;
+  color: #2a363b;
+  font-size: 14px;
 }
 
 .activeLink {
-  font-weight: 600;
+  composes: link;
+  color: #2196f3;
 }

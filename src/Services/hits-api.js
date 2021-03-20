@@ -11,7 +11,7 @@ axios.defaults.params = {
 
 const getTrendingMovies = async() => {
   try {
-    const { data } = await axios.get(`trending/movie/day`);
+    const { data } = await axios.get('trending/movie/day');
 
     return data.results;
   } catch (error) {
@@ -22,7 +22,7 @@ const getTrendingMovies = async() => {
 
 const getMovieQuery = async query => {
   try {
-    const { data } = await axios.get(`search/movie`, {
+    const { data } = await axios.get('search/movie', {
       params: { query: query, page: 1, include_adult: false },
     });
 

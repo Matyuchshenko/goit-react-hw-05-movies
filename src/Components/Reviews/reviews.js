@@ -7,9 +7,7 @@ export default function Reviews({ id }) {
   const [reviews, setReviews] = useState(null);
 
   useEffect(() => {
-    hitsApi
-      .getMovieReviews(id)
-      .then(data => {
+    hitsApi.getMovieReviews(id).then(data => {
         setReviews(data);
       })
       .catch(error => {

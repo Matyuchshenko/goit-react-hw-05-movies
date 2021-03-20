@@ -15,9 +15,7 @@ export default function SearchMovies({ searchMovies }) {
     if (!searchMovies) {
       return;
     }
-    hitsApi
-      .getMovieQuery(searchMovies)
-      .then(data => {
+    hitsApi.getMovieQuery(searchMovies).then(data => {
         setMovies(data.results);
         setTotalResults(data.total_results);
       })

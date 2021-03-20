@@ -20,7 +20,7 @@ export default function SearchMoviesForm({ onSubmit }) {
       <input
         onChange={handleChange}
         value={searchFilm}
-        placeholder="Search movies"
+        placeholder="Search movie"
         className={s.searchFormInput}
       />
       <button type="submit" className={s.searchFormButton}>

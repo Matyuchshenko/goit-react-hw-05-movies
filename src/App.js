@@ -9,13 +9,13 @@ import Spinner from "./Components/loader/Loader";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const HomePage = lazy(() =>
-  import("./Components/Views/HomePage/HomePage.js" /* webpackChunkName: "HomePage"*/),
+  import("./Components/Views/HomePage/HomePage" /* webpackChunkName: "HomePage"*/),
 );
 const MovieDetailsPage = lazy(() =>
-  import("./Components/Views/MovieDetailsPage/MovieDetailsPage.js" /* webpackChunkName: "MovieDetailsPage"*/)
+  import("./Components/Views/MovieDetailsPage/MovieDetailsPage" /* webpackChunkName: "MovieDetailsPage"*/)
 );
 const SearchMovies = lazy(() =>
-  import("./Components/SearchMovies/SearchMovies.js" /* webpackChunkName: "SearchMovies"*/)
+  import("./Components/SearchMovies/SearchMovies" /* webpackChunkName: "SearchMovies"*/)
 );
 
 export default function App() {
@@ -32,10 +32,10 @@ export default function App() {
 
           <Route path="/movies" exact>
             <SearchMoviesForm onSubmit={setSearchFilm} />
-            <SearchMovies SearchMovies={searchFilm} />
+            <SearchMovies searchMovies={searchFilm} />
           </Route>
 
-          <Route path="/movies/:movieId" exact>
+          <Route path="/movies/:movieId">
             <MovieDetailsPage />
           </Route>
 
